@@ -1,6 +1,7 @@
 package internship.week1;
 
 public class CaseToPrint {
+
     public static void main(String[] args) {
         int day = 11;
         switch (day) {
