@@ -2,11 +2,13 @@ package internship.week2;
 
 public class TemperatureConverter {
     public static double celsiusToFahrenheit(double celsius){
-        return (celsius*9/5) + 32;
+        return (celsius * 9/5) + 32;
     }
+
     public static double fahrenheitToCelsius(double fahrenheit){
         return  (fahrenheit - 32) * 5/9;
     }
+
     public static void main(String[] args){
         double celsius = 50;
         double fahrenheit = 90;

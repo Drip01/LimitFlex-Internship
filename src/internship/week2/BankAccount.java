@@ -5,11 +5,13 @@ package internship.week2;
        public void initialBalance(int myBalance) {
            System.out.println("initial balance: " + "$" + balance);
        }
+
        public void deposit(int MoneyDeposited) {
            balance = balance + MoneyDeposited;
            System.out.println("Deposited to your account: $" + MoneyDeposited);
            System.out.println("Available Balance:" + "$" + balance);
        }
+
        public void withdraw(int MoneyWithdrawn) {
            if (MoneyWithdrawn > balance) {
                System.out.println("Insufficient funds");
@@ -20,6 +22,7 @@ package internship.week2;
                System.out.println("Available Balance:" + "$" + balance);
            }
        }
+
        public static void main(String[] args) {
            BankAccount myAccount = new BankAccount();
            myAccount.initialBalance(0);

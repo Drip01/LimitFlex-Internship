@@ -1,7 +1,9 @@
 package internship.week2;
 
 import java.time.LocalDate;
+
 import java.time.format.DateTimeFormatter;
+
 public class DateAndTime {
     public static void main(String[] args) {
         LocalDate currentDate = LocalDate.now();

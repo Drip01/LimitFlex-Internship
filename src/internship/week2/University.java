@@ -7,6 +7,7 @@ package week_2.algorithm;
          }
      }
 }
+
 public class University {
     public static void main(String[] args) {
         School.Department department = new School.Department();

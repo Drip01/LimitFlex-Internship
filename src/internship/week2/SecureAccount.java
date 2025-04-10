@@ -10,15 +10,19 @@ public class SecureAccount {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
     }
+
     public String getAccountName() {
         return accountName;
     }
+
     public String getAccountNumber() {
         return accountNumber;
     }
+
     public double getBalance() {
         return balance;
     }
+
     public void setAccountName(String accountName) {
         this.accountName = accountName;
     }

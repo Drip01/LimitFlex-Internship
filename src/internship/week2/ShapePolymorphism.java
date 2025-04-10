@@ -5,6 +5,7 @@ package week_2.algorithm;
         return 0;
     }
 }
+
 class myRectangle extends Shape {
     double length;
     double width;
@@ -12,10 +13,12 @@ class myRectangle extends Shape {
         this.length = length;
         this.width = width;
     }
+
     public double area() {
         return length * width;
     }
 }
+
   class myCircle extends  Shape {
     double radius;
     public myCircle(double radius) {
@@ -25,6 +28,7 @@ class myRectangle extends Shape {
         return Math.PI * radius * radius;
     }
 }
+
 public class ShapePolymorphism {
     public static void main (String[] args) {
         Shape rectangle = new myRectangle(5,3);

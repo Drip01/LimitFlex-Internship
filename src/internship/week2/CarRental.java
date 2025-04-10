@@ -16,7 +16,7 @@ class MyCarRental {
     public void rental() {
         if (availableForRent) {
             availableForRent = false;
-            System.out.println("You have rented " + model + year + ".");
+            System.out.println("You have rented " + model + year);
         }
         else {
             System.out.println(model + " " + year + "is not available");
@@ -37,7 +37,7 @@ class MyCarRental {
 }
 public class CarRental {
     public static void main(String[] args) {
-        MyCarRental carRental = new MyCarRental("Audi", 2020, 150000);
+        MyCarRental carRental = new MyCarRental("Audi ", 2020, 150000);
         carRental.displayCar();
         carRental.rental();
         carRental.returnCar();
