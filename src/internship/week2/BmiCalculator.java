@@ -10,6 +10,7 @@ public class BmiCalculator {
     public double calculateBMI(){
         return weight / (height * height);
     }
+
     public String bmiCategory() {
         double bmi = calculateBMI();
         if (bmi < 19.6) {

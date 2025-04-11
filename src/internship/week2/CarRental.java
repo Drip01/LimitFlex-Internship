@@ -1,6 +1,7 @@
 package internship.week2;
 import java.util.HashMap;
 import java.util.Map;
+
 class MyCarRental {
     String model;
     int year;

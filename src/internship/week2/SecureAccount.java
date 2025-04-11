@@ -56,8 +56,8 @@ public class SecureAccount {
     }
     public static void main(String[] args) {
         SecureAccount account = new SecureAccount("Bad Therapist", "21070189", 500.0);
-        System.out.println("Account name: " + account.getAccountName());
-        System.out.println("Account number: " + account.getAccountNumber());
+        System.out.println("internship.account.Account name: " + account.getAccountName());
+        System.out.println("internship.account.Account number: " + account.getAccountNumber());
         System.out.println("Balance: " + account.getBalance());
 
         account.deposit(300.0);

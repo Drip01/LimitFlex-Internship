@@ -24,7 +24,7 @@ public class BookManagement{
             price -= (price * discountPercentage / 100);
             System.out.println("Discount Applied: " + "$" + price);
         } else {
-            System.out.println("Invalid Account ");
+            System.out.println("Invalid internship.account.Account ");
         }
     }
     public void BookDetails(){
