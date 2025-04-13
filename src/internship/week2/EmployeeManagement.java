@@ -26,16 +26,16 @@ public class EmployeeManagement {
     }
 
     public void EmployeeDetails() {
-        System.out.println("Name Of Business: " + name);
+        System.out.println("Name: " + name);
         System.out.println("Salary: $" + salary);
         System.out.println("Position: " + position);
     }
 
     public static void main(String[] args) {
-        System.out.println("Business Details: ");
+        System.out.println("Employee Details: ");
         EmployeeManagement employeeManagement = new EmployeeManagement();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Name Of Business: ");
+        System.out.println("Name: ");
         employeeManagement.name = scanner.nextLine();
         System.out.println("Salary: ");
         employeeManagement.salary = scanner.nextInt();

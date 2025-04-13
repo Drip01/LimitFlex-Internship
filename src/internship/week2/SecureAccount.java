@@ -23,7 +23,7 @@ public class SecureAccount {
         return balance;
     }
 
-    public void setAccountName(String accountName) {
+   /* public void setAccountName(String accountName) {
         this.accountName = accountName;
     }
 
@@ -33,7 +33,7 @@ public class SecureAccount {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
+    }*/
 
     public void deposit(double amount) {
         if (amount > 0) {

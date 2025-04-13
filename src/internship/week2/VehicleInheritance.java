@@ -3,6 +3,7 @@ package internship.week2;
 public class VehicleInheritance {
     String car;
     String truck;
+
     public VehicleInheritance(String type1, String type2) {
         this.car = type1;
         this.truck = type2;

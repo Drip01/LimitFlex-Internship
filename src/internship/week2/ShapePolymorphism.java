@@ -9,6 +9,7 @@ package week_2.algorithm;
 class myRectangle extends Shape {
     double length;
     double width;
+
     public myRectangle (double length, double width) {
         this.length = length;
         this.width = width;
@@ -24,6 +25,7 @@ class myRectangle extends Shape {
     public myCircle(double radius) {
         this.radius = radius;
     }
+
     public double area() {
         return Math.PI * radius * radius;
     }

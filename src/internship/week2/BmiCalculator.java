@@ -3,6 +3,7 @@ package internship.week2;
 public class BmiCalculator {
     double weight;
     double height;
+
     public BmiCalculator(double weight, double height){
         this.weight = weight;
         this.height =height;
