@@ -20,7 +20,7 @@ public class ProductInventory {
             this.quantity += quantity;
             System.out.println("Added: " + quantity + "units ");
         } else {
-            System.out.println("Quantity to add must be positive: ");
+            System.out.println("ERROR ");
         }
     }
 
@@ -29,9 +29,9 @@ public class ProductInventory {
             this.quantity -= quantity;
             System.out.println("Removed: " + quantity + "units. New quantity: " + this.quantity);
         } else if (quantity > 0) {
-            System.out.println("Not enough stock to remove. " + quantity + "units");
+            System.out.println("Not enough stock to remove " + quantity + " units");
         } else {
-            System.out.println("Quantity to remove must be positive.");
+            System.out.println("ERROR");
         }
     }
 
@@ -41,8 +41,7 @@ public class ProductInventory {
         ProductInventory product = new ProductInventory("Iphone", 1000, 10);
         product.ProductDetails();
         product.addStock(12);
-        product.removeStock(2);
-        product.ProductDetails();
+        product.removeStock(23);
     }
     }
 

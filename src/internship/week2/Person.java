@@ -39,7 +39,7 @@ public class Person {
 
             System.out.println("Address: " + person.getAddress());
             person.setName("Mawedo Zephyr");
-            person.setAge(19);
+            person.setAge(-1);
             person.setAddress("1 Sunny Iheogu St");
 
             System.out.println("\nUpdated info:");

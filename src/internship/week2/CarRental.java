@@ -42,6 +42,8 @@ public class CarRental {
         carRental.displayCar();
         carRental.rental();
         carRental.returnCar();
+        carRental.rental();
+        carRental.displayCar();
     }
 }
 
