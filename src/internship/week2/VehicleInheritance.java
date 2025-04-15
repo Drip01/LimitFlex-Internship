@@ -1,22 +1,54 @@
 package internship.week2;
 
-public class VehicleInheritance {
-    String car;
-    String truck;
+    class Vehicle {
+    String brand;
 
-    public VehicleInheritance(String type1, String type2) {
-        this.car = type1;
-        this.truck = type2;
+    public Vehicle (String brand) {
+        this.brand = brand;
+    }
+
+    public void display() {
+        System.out.println("Vehicle Brand: " + brand);
+    }
+}
+    class Car extends Vehicle {
+        int doors;
+
+        public Car(String brand, int doors) {
+            super(brand);
+            this.doors = doors;
+        }
+        public void display() {
+            super.display();
+            System.out.println("Car has " + doors + " doors");
+        }
+    }
+
+    class Truck extends Vehicle {
+    double capacity;
+
+    public Truck (String brand, double capacity) {
+        super(brand);
+        this.capacity = capacity;
     }
     public void display() {
-        System.out.println("Type 1 " + car);
-        System.out.println("Type 2 " + truck);
+        super.display();
+        System.out.println("Truck capacity: " + capacity);
+      }
     }
-    public static void main(String[] args) {
-        VehicleInheritance vehicle = new VehicleInheritance("Car ", "Truck");
-        vehicle.display();
+
+    public class VehicleInheritance {
+        public static void main(String[] args) {
+            Car1 car = new Car1("BMW", 2);
+            Truck truck = new Truck("LAMBO", 18);
+
+            car.display();
+            System.out.println();
+            truck.display();
     }
-    }
+}
+
+
 
 
 

@@ -1,22 +1,22 @@
 package internship.week2;
 
 abstract class Payment {
-    public abstract void processPayment();
+    public abstract void processPayment(double amount);
 }
 
 
 class CreditCardPayment extends Payment {
     @Override
-    public void processPayment() {
-        System.out.println("Withdraw money with credit card");
+    public void processPayment(double amount) {
+        System.out.println("Withdraw money with credit card $" + amount);
     }
 }
 
 
 class PayPalPayment extends Payment {
     @Override
-    public void processPayment() {
-        System.out.println("Withdraw money with paypal");
+    public void processPayment(double amount) {
+        System.out.println("Withdraw money with paypal $" + amount);
     }
 }
 
@@ -25,8 +25,8 @@ public class AbstractPaymentClass {
     public static void main(String[] args) {
         CreditCardPayment creditCardPayment = new CreditCardPayment();
         PayPalPayment payPalPayment = new PayPalPayment();
-        creditCardPayment.processPayment();
-        payPalPayment.processPayment();
+        creditCardPayment.processPayment(150);
+        payPalPayment.processPayment(65);
     }
 }
 

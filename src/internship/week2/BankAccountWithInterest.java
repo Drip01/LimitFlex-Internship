@@ -4,7 +4,7 @@ package internship.week2;
      double Balance = 50000;
 
      public void interest(double interestRate) {
-         System.out.println("Interest rate: " + interestRate + "%");
+         System.out.println("Interest added: $" + interestRate);
      }
  }
 
@@ -18,7 +18,7 @@ package internship.week2;
      public static void main (String[] args) {
          SavingsAccount savings = new SavingsAccount();
          savings.interest(20);
-        /* MyBankAccount bankAccount = new MyBankAccount();
-         bankAccount.interest(20);*/
+         MyBankAccount bankAccount = new MyBankAccount();
+         bankAccount.interest(20);
      }
 }

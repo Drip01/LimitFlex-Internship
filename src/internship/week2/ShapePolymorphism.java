@@ -1,4 +1,4 @@
-package week_2.algorithm;
+package internship.week2;
 
  class Shape {
     public double area() {
