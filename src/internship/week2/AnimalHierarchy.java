@@ -40,6 +40,7 @@ class Cat extends Animal {
         animal.sound();
         dog.sound();
         cat.sound();
+        System.out.println();
         animal.sleep();
         dog.sleep();
         cat.sleep();
