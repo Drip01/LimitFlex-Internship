@@ -21,11 +21,18 @@ public class ObjectOrientedProgrammingChallenge {
 //        regularMeal.setDrinkSize("LARGE");
 //        regularMeal.printItemizedList();
 
-      MealOrder secondMeal = new MealOrder("turkey", "7-up",
-              "chili");
-      secondMeal.addBurgerTopping("LETTUCE", "CHEESE", "MAYO");
-      secondMeal.setDrinkSize("SMALL");
-      secondMeal.printItemizedList();
+//      MealOrder secondMeal = new MealOrder("turkey", "7-up",
+//              "chili");
+//      secondMeal.addBurgerTopping("LETTUCE", "CHEESE", "MAYO");
+//      secondMeal.setDrinkSize("SMALL");
+//      secondMeal.printItemizedList();
+
+        MealOrder deluxeMeal = new MealOrder("deluxe", "7-up",
+                "chili");
+        deluxeMeal.addBurgerToppings("AVOCADO", "BACON", "LETTUCE",
+                "CHEESE", "MAYO");
+        deluxeMeal.setDrinkSize("SMALL");
+        deluxeMeal.printItemizedList();
     }
 }
 
@@ -148,29 +155,86 @@ class MealOrder {
     }
 
     public MealOrder(String burgerType, String drinkType, String sideType) {
-        this.burger = new Burger(burgerType, 4.0);
+
+        if(burgerType.equalsIgnoreCase("deluxe")) {
+            this.burger = new DeluxeBurger(burgerType, 8.5);
+        } else {
+            this.burger = new Burger(burgerType, 4.0);
+        }
         this.drink = new Item("drink", drinkType, 1.00);
         this.side = new Item("side", sideType, 1.50);
     }
 
     public double getTotalPrice() {
+
+        if (burger instanceof DeluxeBurger) {
+            return burger.getAdjustedPrice();
+        }
+
         return side.getAdjustedPrice() + drink.getAdjustedPrice() +
                 burger.getAdjustedPrice();
     }
 
     public void printItemizedList() {
+
         burger.printItem();
-        drink.printItem();
-        side.printItem();
+        if (burger instanceof DeluxeBurger) {
+            Item.printItem(drink.getName(), 0);
+            Item.printItem(side.getName(), 0);
+        } else {
+            drink.printItem();
+            side.printItem();
+        }
         System.out.println("-".repeat(30));
         Item.printItem("TOTAL PRICE", getTotalPrice());
     }
 
-    public void addBurgerTopping(String extra1, String extra2, String extra3) {
+    public void addBurgerToppings(String extra1, String extra2, String extra3) {
         burger.addToppings(extra1, extra2, extra3);
     }
 
+    public void addBurgerToppings(String extra1, String extra2, String extra3,
+                                 String extra4, String extra5) {
+        if (burger instanceof DeluxeBurger db) {
+            db.addToppings(extra1, extra2, extra3, extra4, extra5);
+        } else {
+            burger.addToppings(extra1, extra2, extra3);
+        }
+    }
     public void setDrinkSize(String size) {
         drink.setSize(size);
+    }
+}
+
+class DeluxeBurger extends Burger {
+
+    Item deluxe1;
+    Item deluxe2;
+
+    public DeluxeBurger(String name, double price) {
+        super(name, price);
+    }
+
+    public void addToppings(String extra1, String extra2, String extra3,
+                            String extra4, String extra5) {
+        super.addToppings(extra1, extra2, extra3);
+        deluxe1 = new Item("TOPPING", extra4, 0);
+        deluxe2 = new Item("TOPPING", extra5, 0);
+    }
+
+    @Override
+    public void printItemizedList() {
+        super.printItemizedList();
+        if(deluxe1 != null) {
+            deluxe1.printItem();
+        }
+        if (deluxe2 != null) {
+            deluxe2.printItem();
+        }
+    }
+
+    @Override
+    public double getExtraPrice(String toppingName) {
+        return 0;
     }
 }
