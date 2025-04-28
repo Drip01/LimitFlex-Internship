@@ -19,7 +19,7 @@ public abstract class ProductForSale {
     public void printPricedItem(int qty) {
 
         System.out.printf("%2d qty at $%8.2f each, %-15s %-35s %n",
-                qty, price, description, type);
+                qty, price, type, description);
     }
 
     public abstract void showDetails();
@@ -34,6 +34,20 @@ class ArtObject extends ProductForSale {
     @Override
     public void showDetails() {
         System.out.println("This " + type + " is a beautiful reproductive");
+        System.out.printf("The price of the is piece $%6.2f %n", price);
+        System.out.println(description);
+    }
+}
+
+class Furniture extends ProductForSale {
+
+    public Furniture(String type, double price, String description) {
+        super(type, price, description);
+    }
+
+    @Override
+    public void showDetails() {
+        System.out.println("This " + type + " was manufactured in Onitsha ");
         System.out.printf("The price of the is $%6.2f %n", price);
         System.out.println(description);
     }
