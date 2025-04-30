@@ -17,7 +17,7 @@ public interface Mappable {
     default String toDRIP() {
 
         return """
-                type: "%s", "label": "%s", "marker": "%s" """
+                type: "%s", "label": " %s", "marker": "%s" """
                 .formatted(getShape(), getLabel(), getMarker());
     }
 
