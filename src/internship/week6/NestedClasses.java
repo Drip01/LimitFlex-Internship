@@ -24,6 +24,28 @@ public class NestedClasses {
         for (Employee e : employees) {
             System.out.println(e);
         }
+
+        System.out.println("Store Members");
+
+        List<StoreEmployee> storeEmployees = new ArrayList<>(List.of(
+                new StoreEmployee(10015, " Meg", 2019,
+                        "Target"),
+                new StoreEmployee(10515, " Joe", 2021,
+                        "Walmart"),
+                new StoreEmployee(10105, " Tom", 2020,
+                        "Macys"),
+                new StoreEmployee(10215, " Marty", 2018,
+                        "Walmart"),
+                new StoreEmployee(10322, " Bud", 2016,
+                        "Target")));
+
+        var genericEmployee = new StoreEmployee();
+        var comparator = genericEmployee.new StoreComparator<>();
+        storeEmployees.sort(comparator);
+
+        for (StoreEmployee e : storeEmployees) {
+            System.out.println(e);
+        }
     }
 }
 
@@ -75,10 +97,43 @@ class Employee {
     }
 }
 
-//class EmployeeComparator <T extends Employee> implements Comparator<Employee> {
-//
-//    @Override
-//    public int compare(Employee o1, Employee o2) {
-//        return o1.getName().compareTo(o2.getName());
-//    }
-//}
+class EmployeeComparator <T extends Employee> implements Comparator<Employee> {
+
+    @Override
+    public int compare(Employee o1, Employee o2) {
+        return o1.getName().compareTo(o2.getName());
+    }
+}
+
+class StoreEmployee extends Employee {
+
+    private String store;
+
+    public StoreEmployee() {
+    }
+
+    public StoreEmployee(int employeeId, String name, int yearStarted, String store) {
+        super(employeeId, name, yearStarted);
+        this.store = store;
+    }
+
+    @Override
+    public String toString() {
+        return "%-8s%s".formatted(store, super.toString());
+    }
+
+    public class StoreComparator<T extends StoreEmployee>
+            implements Comparator<StoreEmployee> {
+
+        @Override
+        public int compare(StoreEmployee o1, StoreEmployee o2) {
+
+            int result = o1.store.compareTo(o2.store);
+            if (result == 0) {
+                return new Employee.EmployeeComparator<>(
+                        "yearStarted").compare(o1, o2);
+            }
+            return result;
+        }
+    }
+}
