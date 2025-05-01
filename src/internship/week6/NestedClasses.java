@@ -39,12 +39,13 @@ public class NestedClasses {
                 new StoreEmployee(10322, " Bud", 2016,
                         "Target")));
 
-        var genericEmployee = new StoreEmployee();
-        var comparator = genericEmployee.new StoreComparator<>();
+
+        var comparator = new StoreEmployee().new StoreComparator<>();
         storeEmployees.sort(comparator);
 
         for (StoreEmployee e : storeEmployees) {
             System.out.println(e);
+
         }
     }
 }
@@ -137,3 +138,6 @@ class StoreEmployee extends Employee {
         }
     }
 }
+
+
+
