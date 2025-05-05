@@ -1,6 +1,9 @@
 package internship.week6;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -58,5 +61,31 @@ public class ChainingLambdas {
 
         Predicate<String> combined3 = p3.and(p4).negate();
         System.out.println("Combined3: " + combined3.test(name));
+
+        record Person2(String firstName, String lastName) {}
+
+        List<Person2> list = new ArrayList<>(Arrays.asList(
+                new Person2("Peter", "Pan"),
+                new Person2("Peter", "PumpkinEater"),
+                new Person2("Minne", "Mouse"),
+                new Person2("Mickey", "Mouse")
+        ));
+
+        list.sort((o1,o2) -> o1.lastName.compareTo(o2.lastName));
+        list.forEach(System.out::println);
+
+        System.out.println("-".repeat(30));
+        list.sort(Comparator.comparing(Person2::lastName));
+        list.forEach(System.out::println);
+
+        System.out.println("-".repeat(30));
+        list.sort(Comparator.comparing(Person2::lastName)
+                        .thenComparing(Person2::firstName));
+        list.forEach(System.out::println);
+
+        System.out.println("-".repeat(30));
+        list.sort(Comparator.comparing(Person2::lastName)
+                .thenComparing(Person2::firstName).reversed());
+        list.forEach(System.out::println);
     }
 }
