@@ -28,7 +28,6 @@ public class Main {
         System.out.println(robinHood);
 
     }
-
         public static void printData(String header, Collection<Contact> contacts) {
 
             System.out.println("-".repeat(50));
