@@ -15,7 +15,7 @@ public class ContactData {
             Minnie Mouse, 4567806666
             Robin Hood, 5647893000
             Robin Hood, 7899028222
-            Lucy Van Pelt, 564208652
+            Lucy Van Pelt, 5642086852
             Mickey Mouse, 9998887777
             """;
 
@@ -24,7 +24,7 @@ public class ContactData {
             Mickey Mouse, micky1@aws.com
             Minnie Mouse, minnie@verizon.net
             Robin Hood, rhood@gmail.com
-            Lucy Van Pelt, lvpelt2015@gmail.com
+            Linus Van Pelt, lvpelt2015@gmail.com
             Daffy Duck, daffy@google.com
             """;
 
