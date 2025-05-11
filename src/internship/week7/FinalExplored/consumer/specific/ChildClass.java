@@ -22,4 +22,10 @@ public class ChildClass extends BaseClass {
         System.out.println("[Child:mandatoryMethod]: My own important stuff");
     }
 
+    public static void recommendedStatic() {
+
+        System.out.println("[Child.recommendedStatic] BEST Way to Do it");
+        optionalStatic();
+//        mandatoryStatic();
+    }
 }
