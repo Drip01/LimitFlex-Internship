@@ -3,7 +3,7 @@ package internship.week8.StreamingStudents;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Stream;
+
 
 public class Main {
 
@@ -52,5 +52,38 @@ public class Main {
         }
         System.out.println("# of students >= 60 = " + (students.length - total));
 
+        var ageStream = Arrays.stream(students).
+                mapToInt(Student::getAgeEnrolled);
+        System.out.println("Stats for Enrollment Age = " + ageStream.summaryStatistics());
+
+        var currentAgeStream = Arrays.stream(students).
+                mapToInt(Student::getAge);
+        System.out.println("Stats for Current Age = " +
+                currentAgeStream.summaryStatistics());
+
+        Arrays.stream(students)
+                .map(Student::getCountryCode)
+                .distinct()
+                .sorted()
+                .forEach(s -> System.out.print(s + " "));
+
+        System.out.println();
+        boolean longTerm = Arrays.stream(students)
+                .anyMatch(s -> (s.getAge() - s.getAgeEnrolled() >= 7) &&
+                        (s.getMonthsSinceActive() < 12));
+        System.out.println("longTerm students? " + longTerm);
+
+        long longTermCount = Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >= 7) &&
+                        (s.getMonthsSinceActive() < 12))
+                        .count();
+        System.out.println("longTerm students? " + longTermCount);
+
+        Arrays.stream(students)
+                .filter(s -> (s.getAge() - s.getAgeEnrolled() >= 7) &&
+                        (s.getMonthsSinceActive() < 12))
+                .filter(s -> !s.hasProgrammingExperience())
+                .limit(5)
+                .forEach(System.out::println);
     }
 }
