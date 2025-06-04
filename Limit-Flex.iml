@@ -12,5 +12,7 @@
     <orderEntry type="library" name="mysql-connector-j-9.3.0" level="project" />
     <orderEntry type="library" name="mysql.connector.j" level="project" />
     <orderEntry type="library" name="mysql-connector-j-9.3.1" level="project" />
+    <orderEntry type="library" name="mysql-connector-j-9.3.2" level="project" />
+    <orderEntry type="library" name="hibernate.orm.core" level="project" />
   </component>
 </module>
