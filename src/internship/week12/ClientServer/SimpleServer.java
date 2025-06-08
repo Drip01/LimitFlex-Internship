@@ -13,7 +13,7 @@ public class SimpleServer {
 
 		try (ServerSocket serverSocket = new ServerSocket(5000)) {
 
-			try (Socket socket = serverSocket.accept();){
+			try (Socket socket = serverSocket.accept();) {
 				System.out.println("Server accepts client connection");
 				BufferedReader input = new BufferedReader(
 						new InputStreamReader(socket.getInputStream()));
