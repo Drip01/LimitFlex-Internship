@@ -1,4 +1,4 @@
-package internship.week12.ClientServer;
+package internship.week12.ClientServer.server;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;

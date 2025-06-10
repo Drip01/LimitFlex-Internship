@@ -1,4 +1,4 @@
-package internship.week12.ClientServer;
+package internship.week12.ClientServer.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class MultiThreadedSimpleServer {
 
 		ExecutorService executorService = Executors.newCachedThreadPool();
 
-		try (ServerSocket serverSocket = new ServerSocket(5000)) {
+		try (ServerSocket serverSocket = new ServerSocket(5001)) {
 
 			while (true) {
 

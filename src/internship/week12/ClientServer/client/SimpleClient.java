@@ -1,4 +1,4 @@
-package internship.week12.ClientServer;
+package internship.week12.ClientServer.client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ public class SimpleClient {
 
 	public static void main(String[] args) {
 
-		try (Socket socket = new Socket("localhost", 5000)) {
+		try (Socket socket = new Socket("localhost", 5001)) {
 
 			BufferedReader input = new BufferedReader(
 					new InputStreamReader(socket.getInputStream()));

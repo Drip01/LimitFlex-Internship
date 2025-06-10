@@ -1,4 +1,4 @@
-package internship.week12.ClientServer;
+package internship.week12.ClientServer.server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ public class SimpleServer {
 
 	public static void main(String[] args) {
 
-		try (ServerSocket serverSocket = new ServerSocket(5000)) {
+		try (ServerSocket serverSocket = new ServerSocket(5001)) {
 
 			try (Socket socket = serverSocket.accept();) {
 				System.out.println("Server accepts client connection");
