@@ -10,7 +10,7 @@ public class SimpleServerChannel {
 
 	public static void main(String[] args) {
 
-		try (ServerSocketChannel serverChannel = ServerSocketChannel.open().open()) {
+		try (ServerSocketChannel serverChannel = ServerSocketChannel.open()) {
 			serverChannel.socket().bind(new InetSocketAddress(5000));
 
 			System.out.println("Server is listening on port " +
