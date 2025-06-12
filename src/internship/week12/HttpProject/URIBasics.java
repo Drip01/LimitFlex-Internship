@@ -9,8 +9,9 @@ public class URIBasics {
 
 	public static void main(String[] args) {
 
+		URI baseSite = URI.create("https://learnprogramming.acedemy");
 		URI timsSite = URI.create(
-				"https://learnprogramming.academy/courses/complete-java-masterclass");
+				"courses/complete-java-masterclass");
 		print(timsSite);
 
 		try {
@@ -18,7 +19,8 @@ public class URIBasics {
 					"http://user:pw@store.com:5000/products/products/phone?os=android#samsung");
 			print(uri);
 
-			URL url = timsSite.toURL();
+			URI masterClass = baseSite.resolve(timsSite);
+			URL url = masterClass.toURL();
 			System.out.println(url);
 			print(url);
 		} catch (URISyntaxException | MalformedURLException e) {
