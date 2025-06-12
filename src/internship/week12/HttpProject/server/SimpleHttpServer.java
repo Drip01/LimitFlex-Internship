@@ -1,7 +1,6 @@
 package internship.week12.HttpProject.server;
 
 import com.sun.net.httpserver.HttpServer;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.HashMap;
@@ -28,6 +27,8 @@ public class SimpleHttpServer {
 
 				Map<String,String> parameters = parseParameters(data);
 				System.out.println(parameters);
+
+				exchange.getRequestHeaders().entrySet().forEach(System.out::println);
 				if (requestMethod.equals("POST")) {
 					visitorCounter++;
 				}
@@ -44,7 +45,7 @@ public class SimpleHttpServer {
 						     <input type="text" id="first" name="first" value="%s">
 						     <br>
 						     <label for="last">Last name:</label>
-						     <input type="text" id="last" name="last" value=%s>
+						     <input type="text" id="last" name="last" value="%s">
 						     <br>
 						    <input type="submit" value="Submit">
 					   </form>
