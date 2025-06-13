@@ -36,7 +36,7 @@ public class HttpClientGet {
 //			System.out.println( response.body());
 			response.body()
 					.filter(s -> s.contains("<h1>"))
-					.map(s -> s.replaceAll("<[^>]*", "").strip())
+					.map(s -> s.replaceAll("<[^>]*>", "").strip())
 					.forEach(System.out::println);
 		} catch (IOException | URISyntaxException | InterruptedException e) {
 			throw new RuntimeException(e);
