@@ -7,7 +7,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Path;
 import java.time.Duration;
-import java.util.stream.Stream;
 
 import static java.net.HttpURLConnection.HTTP_OK;
 
